@@ -6,21 +6,29 @@ const projects = [
     src: "/assets/zentry.png",
     alt: "Get Shit Done",
     link: "https://zentry-mu.vercel.app/",
+    name: "Get Shit Done",
+    description: "A productivity app to manage tasks and projects efficiently.",
   },
   {
     src: "/assets/liveDocs.png",
     alt: "Design for Simplicity",
     link: "https://live-docs-pied.vercel.app/sign-in",
+    name: "Live Docs",
+    description: "A simple and intuitive document management system, focused on streamlining document handling and collaboration.",
   },
   {
     src: "/assets/project3.png",
     alt: "Change by Design",
     link: "https://thirtysixstudios-eta.vercel.app/",
+    name: "Thirty Six Studios",
+    description: "A portfolio website showcasing my skills and the three core elements of my work at ThirtySix Studios.",
   },
   {
     src: "/assets/project4.png",
     alt: "Colorful Concepts",
     link: "https://modern-website-iota-drab.vercel.app/",
+    name: "Colorful Concepts",
+    description: "A website showcasing colorful, modern design concepts.",
   },
 ];
 
@@ -48,16 +56,20 @@ const Projects = () => {
                 className="object-cover transition duration-300 group-hover:opacity-50"
               />
 
-              {/* Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 bg-[#ffc300] text-white font-bold rounded-lg shadow-md hover:bg-black transition duration-300"
-                >
-                  View Project
-                </a>
+              {/* Overlay on Hover */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 bg-black bg-opacity-50">
+                <div className="text-center px-6 py-4">
+                  <h3 className="text-xl text-white font-bold mb-2">{project.name}</h3>
+                  <p className="text-white mb-4">{project.description}</p>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-[#ffc300] text-white font-bold rounded-lg shadow-md hover:bg-black transition duration-300"
+                  >
+                    View Project
+                  </a>
+                </div>
               </div>
             </div>
           ))}
