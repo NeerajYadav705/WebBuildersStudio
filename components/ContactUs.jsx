@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
@@ -55,11 +55,11 @@ const ContactUs = () => {
         </h1>
         <p className="text-gray-300 mb-10 leading-relaxed">
           At Web Builders Studio, we transform ideas into reality. Our team of
-          experienced professionals specializes in creating modern, user-friendly
-          websites that help businesses thrive. From responsive designs to
-          seamless functionality, we deliver premium solutions tailored to your
-          needs. Let’s collaborate to build something extraordinary and take your
-          business to the next level.
+          experienced professionals specializes in creating modern,
+          user-friendly websites that help businesses thrive. From responsive
+          designs to seamless functionality, we deliver premium solutions
+          tailored to your needs. Let’s collaborate to build something
+          extraordinary and take your business to the next level.
         </p>
 
         {/* Form */}
@@ -137,6 +137,9 @@ const ContactUs = () => {
             </div>
           </div>
         </form>
+        <div className="text-red-500 mt-10">
+          <h1>"Please note that this form is not working at the moment. We are currently working on it, and it will be functional soon. Feel free to call us at the number provided below."</h1>
+        </div>
       </div>
     </div>
   );
