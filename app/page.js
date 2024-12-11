@@ -6,6 +6,7 @@ import Projects from "@/components/Preject";
 import Testimonials from "@/components/Testimonials";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
+import TechStack from "@/components/TechStack";
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
       <Heros />
       <OurServices />
       <AboutUs />
+      <TechStack />
       <Projects />
       <Testimonials />
       <ContactUs />
