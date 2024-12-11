@@ -18,7 +18,7 @@ const Heros = () => {
       >
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="relative text-white text-4xl sm:text-6xl lg:text-7xl font-bold">
-            <span className="absolute top-[-2rem] sm:top-[-2rem] right-[84.5%] sm:right-[84.5%] transform -translate-x-1/2 text-white font-light text-xl sm:text-3xl lg:text-5xl">
+            <span className="absolute top-[-2rem] sm:top-[-3rem] right-[84.5%] sm:right-[84.5%] transform -translate-x-1/2 text-white font-light text-xl sm:text-3xl lg:text-5xl">
               WEB
             </span>
             <span className="text-[#FFC300] text-6xl sm:text-9xl font-normal">

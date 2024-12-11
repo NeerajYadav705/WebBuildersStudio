@@ -6,8 +6,8 @@ const projects = [
     src: "/assets/zentry.png",
     alt: "Get Shit Done",
     link: "https://zentry-mu.vercel.app/",
-    name: "Get Shit Done",
-    description: "A productivity app to manage tasks and projects efficiently.",
+    name: "Zentry",
+    description: "A portfolio website showcasing my work and projects, designed to highlight our skills and creativity.",
   },
   {
     src: "/assets/liveDocs.png",
