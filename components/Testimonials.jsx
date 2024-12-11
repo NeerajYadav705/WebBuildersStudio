@@ -5,18 +5,18 @@ import { testimonials } from "@/lib/testomonialsData";
 
 const Testimonials = () => {
   return (
-    <div className="p-8 md:p-20">
+    <div className="p-8 md:p-20 ">
       {/* Heading Section */}
       <div className="flex items-center justify-center gap-4 md:gap-10 mb-10">
         <Image
           src="/assets/FIREBASE.PNG"
-          width={200}
-          height={200}
+          width={100}
+          height={100}
           alt="firebase"
           className="transform rotate-[-30deg] hidden sm:block"
         />
         <h1 className="text-3xl md:text-4xl font-semibold text-center">
-          Client Recommendations
+          Client <span className="text-[#ffc300]">Recommendations</span>
         </h1>
       </div>
 

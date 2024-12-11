@@ -6,7 +6,7 @@ const OurServices = () => {
   return (
     <div className=" flex justify-around items-center mx-4 sm:mx-20 flex-col mt-20">
       <div className="flex justify-center items-center flex-col gap-3 mb-6">
-        <h1 className="text-2xl font-semibold">
+        <h1 className="text-4xl font-semibold">
           Our <span className="text-[#FFC300]">Services</span>
         </h1>
         <p className="font-light text-center">

@@ -11,7 +11,7 @@ const AboutUs = () => {
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center sm:text-left">
                 OUR <span className="text-[#ffc300]">DNA</span>
               </h1>
-              <div className="w-24 sm:w-40 h-1 bg-[#ffc300]"></div>
+              <div className="w-24 h-px hidden lg:block md:block bg-[#ffc300]"></div>
             </div>
   
             {/* Paragraph Section */}
@@ -48,7 +48,7 @@ const AboutUs = () => {
         {/* Grid Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Box 1 */}
-          <div className="bg-black text-white p-8 md:p-16 flex flex-col justify-center items-center rounded-lg shadow-md">
+          <div className="bg-black  text-white p-8 md:p-16 flex flex-col justify-center items-center rounded-lg shadow-md">
             <h3 className="text-lg md:text-xl font-bold text-center">
               Custom Website Design
             </h3>
