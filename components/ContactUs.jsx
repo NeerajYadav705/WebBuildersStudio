@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 const ContactUs = () => {
@@ -60,6 +60,16 @@ const ContactUs = () => {
       }
     }
   };
+
+  useEffect(() => {
+    if (status === "success" || status === "error") {
+      const timeout = setTimeout(() => {
+        setStatus(null); // Clear status after 2-3 seconds
+      }, 3000); // 3000ms = 3 seconds
+
+      return () => clearTimeout(timeout); // Clean up timeout on component unmount
+    }
+  }, [status]);
 
   return (
     <div className="relative w-full min-h-screen bg-black flex items-center justify-center">
