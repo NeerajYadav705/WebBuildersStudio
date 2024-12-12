@@ -3,6 +3,27 @@ import React from "react";
 
 const projects = [
   {
+    src: "/assets/anita.png",
+    alt: "landing page",
+    link: "https://anitaengineeringworks.com/",
+    name: "Anita Engineering Work",
+    description: "A professional landing page showcasing engineering solutions for various industries, designed to highlight the client's expertise and services.",
+  },
+  {
+    src: "/assets/anshull.png",
+    alt: "travel website",
+    link: "https://www.anshulwallahtravel.in/",
+    name: "Travel Website",
+    description: "A comprehensive travel website offering personalized trip planning and travel services for our client.",
+  },
+  {
+    src: "/assets/norm.png",
+    alt: "norme  packers",
+    link: "https://norme.in/",
+    name: "Norme Packers and Movers",
+    description: "A professional website for Norme Packers and Movers, showcasing reliable relocation and logistics services for our client.",
+  },
+  {
     src: "/assets/zentry.png",
     alt: "Get Shit Done",
     link: "https://zentry-mu.vercel.app/",

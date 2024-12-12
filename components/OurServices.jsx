@@ -22,10 +22,11 @@ const OurServices = () => {
           <Service key={index} imgSrc={item.imgSrc} title={item.title} desc={item.desc} />
         ))}
 
-        <div className="flex justify-center rounded-lg items-center flex-col gap-3 p-10 bg-[#ffc200]">
-          <RxArrowRight className="bg-white rounded-full w-16 h-16" />
-          <h4 className="text-white">View More</h4>
-        </div>
+<div className="flex justify-center items-center flex-col gap-3 p-10 bg-[#ffc300] rounded-lg cursor-not-allowed">
+  <RxArrowRight className="bg-white rounded-full w-16 h-16 flex-shrink-0" />
+  <h4 className="text-white text-center">View More</h4>
+</div>
+
       </div>
     </div>
   );
