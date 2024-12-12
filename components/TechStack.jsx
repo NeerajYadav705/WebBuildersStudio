@@ -1,72 +1,94 @@
-// components/TechStack.js
 'use client'
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 
 const techLogos = [
-  '/assets/js.png',
-  '/assets/MONGODB.png',
-  '/assets/GITHUB.png',
-  '/assets/NODE JS.png',
-  '/assets/REACT.png',
-  '/assets/VUE JS.png',
-  '/assets/GIT.png',
-  '/assets/STACK OVERFLOW.png',
-  '/assets/HTML5.png',
-  '/assets/PRETTIER.png',
-  '/assets/REDUX.png',
-  '/assets/NPM.png',
-  '/assets/TYPESCRIPT.png',
-  '/assets/WORDPRESS.png',
-  '/assets/BOOTSTRAP.png',
-  // Add more technology logos here
+  { src: '/assets/js.png', name: 'JavaScript' },
+  { src: '/assets/MONGODB.png', name: 'MongoDB' },
+  { src: '/assets/GITHUB.png', name: 'GitHub' },
+  { src: '/assets/NODE JS.png', name: 'Node.js' },
+  { src: '/assets/REACT.png', name: 'React' },
+  { src: '/assets/VUE JS.png', name: 'Vue.js' },
+  { src: '/assets/GIT.png', name: 'Git' },
+  { src: '/assets/STACK OVERFLOW.png', name: 'Stack Overflow' },
+  { src: '/assets/HTML5.png', name: 'HTML5' },
+  { src: '/assets/PRETTIER.png', name: 'Prettier' },
+  { src: '/assets/REDUX.png', name: 'Redux' },
+  { src: '/assets/NPM.png', name: 'NPM' },
+  { src: '/assets/TYPESCRIPT.png', name: 'TypeScript' },
+  { src: '/assets/WORDPRESS.png', name: 'WordPress' },
+  { src: '/assets/BOOTSTRAP.png', name: 'Bootstrap' },
 ];
 
-const getRandomPosition = () => {
-    const x = Math.random() * 100; // Random horizontal position
-    const y = Math.random() * 100; // Random vertical position
-    return { x, y };
-  };
-  
-  const TechStack = () => {
-    const [positions, setPositions] = useState([]);
-  
-    useEffect(() => {
-      const randomPositions = techLogos.map(() => getRandomPosition());
-      setPositions(randomPositions);
-    }, []);
-  
-    return (
-        <div className="relative w-full h-96 overflow-hidden flex justify-center items-center bg-white">
-      {/* Heading with cool background effect */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-200 via-pink-200 to-purple-300 blur-sm z-0 animate-slideIn"></div>
-      
-      <div className="relative z-10 text-4xl md:text-6xl font-bold text-center text-[#ffc300] uppercase tracking-wider p-6 animate-slideIn">
-        Technologies We Used in <br/> Web <span className='text-[#ffc300]'>Builders</span> Studio
+const TechStack = () => {
+  return (
+    <div className="relative w-full min-h-screen bg-gray-900 text-gray-100 flex flex-col items-center justify-center py-10">
+      {/* Heading */}
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-10 text-center text-white px-4">
+        Tech <span className="text-[#ffc300]">Keyboard</span>
+      </h1>
+
+      {/* Keyboard Layout */}
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-6 px-4 sm:px-6 py-6 sm:py-8 bg-gray-800 rounded-lg shadow-lg border border-gray-700">
+        <div className="flex justify-center w-full">
+          <div className="flex flex-wrap justify-center gap-4 w-5/6 sm:w-4/5">
+            {techLogos.slice(0, 5).map((logo, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center bg-gray-700 hover:bg-gray-600 rounded-md p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-1 hover:scale-105 text-center"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={40}
+                  height={40}
+                  className="mb-2 sm:mb-3"
+                />
+                <span className="text-xs sm:text-sm font-medium text-gray-300">{logo.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-center w-full">
+          <div className="flex flex-wrap justify-center gap-4 w-5/6 sm:w-4/5">
+            {techLogos.slice(5, 10).map((logo, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center bg-gray-700 hover:bg-gray-600 rounded-md p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-1 hover:scale-105 text-center"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={40}
+                  height={40}
+                  className="mb-2 sm:mb-3"
+                />
+                <span className="text-xs sm:text-sm font-medium text-gray-300">{logo.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-center w-full">
+          <div className="flex flex-wrap justify-center gap-4 w-5/6 sm:w-4/5">
+            {techLogos.slice(10, 15).map((logo, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center bg-gray-700 hover:bg-gray-600 rounded-md p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-1 hover:scale-105 text-center"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={40}
+                  height={40}
+                  className="mb-2 sm:mb-3"
+                />
+                <span className="text-xs sm:text-sm font-medium text-gray-300">{logo.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-  
-        {/* Floating tech stack logos */}
-        {techLogos.map((logo, index) => {
-          const position = positions[index] || { x: 0, y: 0 };
-          const style = {
-            position: 'absolute',
-            left: `${position.x}%`,
-            top: `${position.y}%`,
-            transform: `translate(-50%, -50%)`, // Center the logos based on their position
-          };
-  
-          return (
-            <div
-              key={index}
-              className="floating-logo animate-pulse"
-              style={style}
-            >
-              <Image src={logo} alt={`Tech ${index}`} width={80} height={80} />
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
-  
-  export default TechStack;
+    </div>
+  );
+};
+
+export default TechStack;

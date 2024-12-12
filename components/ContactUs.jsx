@@ -11,6 +11,7 @@ const ContactUs = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState(null); // To show success or error messages
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,11 +19,12 @@ const ContactUs = () => {
     setErrors((prev) => ({ ...prev, [name]: "" })); // Clear error when input changes
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newErrors = {};
 
+    // Validate input fields
     if (!formData.name.trim()) newErrors.name = "Name is required.";
     if (!formData.email.trim()) newErrors.email = "Email is required.";
     if (!formData.phone.trim()) newErrors.phone = "Phone number is required.";
@@ -31,8 +33,31 @@ const ContactUs = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      console.log("Form submitted successfully:", formData);
-      // You can add further submission logic here
+      // Submit the form data to Formspree
+      try {
+        const response = await fetch("https://formspree.io/f/manyzarb", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+          }),
+        });
+
+        if (response.ok) {
+          setStatus("success");
+          setFormData({ name: "", email: "", phone: "", message: "" }); // Clear the form
+        } else {
+          setStatus("error");
+        }
+      } catch (error) {
+        console.error("Form submission error:", error);
+        setStatus("error");
+      }
     }
   };
 
@@ -137,9 +162,18 @@ const ContactUs = () => {
             </div>
           </div>
         </form>
-        <div className="text-red-500 mt-10">
-          <h1>"Please note that this form is not working at the moment. We are currently working on it, and it will be functional soon. Feel free to call us at the number provided below."</h1>
-        </div>
+
+        {/* Status Messages */}
+        {status === "success" && (
+          <p className="text-green-500 mt-10">
+            Your message has been sent successfully!
+          </p>
+        )}
+        {status === "error" && (
+          <p className="text-red-500 mt-10">
+            Oops! Something went wrong. Please try again later.
+          </p>
+        )}
       </div>
     </div>
   );
