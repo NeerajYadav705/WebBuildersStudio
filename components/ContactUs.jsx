@@ -65,7 +65,7 @@ const ContactUs = () => {
     if (status === "success" || status === "error") {
       const timeout = setTimeout(() => {
         setStatus(null); // Clear status after 2-3 seconds
-      }, 3000); // 3000ms = 3 seconds
+      }, 1000); // 3000ms = 3 seconds
 
       return () => clearTimeout(timeout); // Clean up timeout on component unmount
     }

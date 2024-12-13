@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import Heros from "../components/Heros";
 import OurServices from "../components/OurServices";
 import AboutUs from "@/components/AboutUs";
@@ -6,11 +7,35 @@ import Projects from "@/components/Preject";
 import Testimonials from "@/components/Testimonials";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
-import TechStack from "@/components/TechStack";
+import LocomotiveScroll from "locomotive-scroll";
+import "locomotive-scroll/dist/locomotive-scroll.css";
 
-const page = () => {
+const Page = () => {
+  const scrollContainerRef = useRef(null);
+
+  useEffect(() => {
+    let locomotiveScroll;
+
+    if (scrollContainerRef.current) {
+      locomotiveScroll = new LocomotiveScroll({
+        el: scrollContainerRef.current, // The element to apply scrolling
+        smooth: true, // Enables smooth scrolling
+        multiplier:1 , // Adjust scrolling speed
+      });
+    }
+
+    return () => {
+      // Cleanup Locomotive Scroll on unmount
+      if (locomotiveScroll) locomotiveScroll.destroy();
+    };
+  }, []);
+
   return (
-    <div className="h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#ffc300] scrollbar-track-gray-200">
+    <div
+      ref={scrollContainerRef}
+      data-scroll-container
+      className="overflow-hidden"
+    >
       <Heros />
       <OurServices />
       <AboutUs />
@@ -23,4 +48,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
