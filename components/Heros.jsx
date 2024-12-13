@@ -9,6 +9,7 @@ const Heros = () => {
 
       {/* Hero section */}
       <div
+        id="home"
         className="relative h-[100vh]"
         style={{
           backgroundImage: "url('/assets/bg2.jpg')",
@@ -41,7 +42,7 @@ const Heros = () => {
 
         {/* Scroll down text */}
         <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 text-center">
-        {/* line */}
+          {/* line */}
           {/* <div className="w-px h-16 sm:h-20 bg-[#ffc300] mb-5 mx-auto hidden sm:block"></div> */}
           <div className="text-[#FFC300] text-xs sm:text-sm animate-bounce">
             <p className="cursor-pointer">

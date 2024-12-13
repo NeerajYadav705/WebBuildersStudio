@@ -72,7 +72,7 @@ const ContactUs = () => {
   }, [status]);
 
   return (
-    <div className="relative w-full min-h-screen bg-black flex items-center justify-center">
+    <div id="contact-us" className="relative w-full min-h-screen bg-black flex items-center justify-center">
       {/* Background */}
       <div className="absolute inset-0">
         <img

@@ -3,7 +3,7 @@ import React from "react";
 
 const AboutUs = () => {
     return (
-      <div className="p-6 sm:p-12 md:p-16">
+      <div id="about-us" className="p-6 sm:p-12 md:p-16">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-6 mb-8">
           <div className="w-full sm:w-auto">
             {/* Section Header */}
