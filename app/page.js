@@ -16,17 +16,30 @@ const Page = () => {
   useEffect(() => {
     let locomotiveScroll;
 
-    if (scrollContainerRef.current) {
-      locomotiveScroll = new LocomotiveScroll({
-        el: scrollContainerRef.current, // The element to apply scrolling
-        smooth: true, // Enables smooth scrolling
-        multiplier:1 , // Adjust scrolling speed
-      });
-    }
+    const initializeLocomotiveScroll = () => {
+      if (scrollContainerRef.current) {
+        locomotiveScroll = new LocomotiveScroll({
+          el: scrollContainerRef.current,
+          smooth: true, // Enable smooth scrolling
+          multiplier: 0.9, // Adjust speed (reduce multiplier if it's too fast)
+          class: "is-reveal", // Optional: reveal on scroll
+        });
+      }
+    };
+
+    const handleResize = () => {
+      // Initialize Locomotive Scroll only after window resize
+      if (locomotiveScroll) locomotiveScroll.update();
+    };
+
+    initializeLocomotiveScroll();
+
+    // Throttled resize handler for better performance
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      // Cleanup Locomotive Scroll on unmount
       if (locomotiveScroll) locomotiveScroll.destroy();
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
